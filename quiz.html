@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Quiz</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>     
+     <link rel="stylesheet" href="css/font-awesome.min.css"/>
+     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+
+
+<section class="container pt-20">
+	<div class="card">
+		<div class="card-header text-center"><h1>Welcome to stutent quiz</h1><p><h3>	click the button to start your test</h3></p></div>
+		<div class="col-md-12 card-body">
+			<div class="form-row form-group">
+			<div class="col-md-12">
+				<input type="button" value="Start Test" id="btn1" class="btn btn-success btn-block form-control" onclick="myQuiz()">
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+<script >
+
+let quizQuestions = [
+     ['what is the product of 5 and 4?', '20'],
+     ['what is the difference of 10 and 3?', '7'],
+     ['How many states are in Nigeria?' ,'36'],
+     ['How many letters are in English alphabet?', '26']
+     ];
+
+
+
+let count = 0;
+
+ function myQuiz() {
+
+ candidateName = prompt(`Enter your name`)
+for ( var i = 0; i < quizQuestions.length; i++){
+	   
+ 		question  = prompt(` Hello ${candidateName}! ${quizQuestions[i][0]}. press cancel to end the quiz`)
+ 		if (question === quizQuestions[i][1]){
+ 			count++;
+ 		}
+ 		else if (question==null) {
+ 			break;
+ 		}
+ 		}
+
+ 		
+ 		
+document.write(`Your total score is ${count}`)
+}
+
+</script>
+
+
+
+
+	</body>
+</html>
